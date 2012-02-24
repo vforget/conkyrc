@@ -1,0 +1,47 @@
+alignment bottom_left
+background no
+border_width 1
+cpu_avg_samples 5
+default_color 333333
+default_outline_color white
+draw_borders yes
+draw_graph_borders no
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont Terminus:size=10
+gap_x 0
+gap_y 0
+border_inner_margin 3
+minimum_size 1680 14
+maximum_width 1680
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type panel
+own_window_transparent no
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer left
+use_spacer right
+pad_percents 0
+show_graph_scale no
+show_graph_range no
+double_buffer yes
+
+TEXT
+${color gray} ${nodename_short} * ${time %a %b %d, %Y} * \
+Cpu ${cpubar cpu1 12,30} ${cpubar cpu2 12,30} ${cpubar cpu3 12,30} ${cpubar cpu4 12,30} * \
+Mem ${membar 12,30} ${memperc}% * \
+Disk R${diskiograph_read /dev/sda 12,30 00FF00 FF0000 0 -t} \
+W${diskiograph_write /dev/sda 12,30 00FF00 FF0000 0 -t} * \
+Swap ${swapbar 12,30} ${swapperc}% * \
+Net D${downspeedgraph p37p1 12,30 00FF00 FF0000 0 -t} U${upspeedgraph p37p1 12,30 00FF00 FF0000 0 -t} * \
+Load (${running_processes}) ${loadgraph 12,30 00FF00 FF0000 0 -t} * \
+Top [${top name 1} ${top cpu 1} ${top mem 1}] \
+[${top name 2} ${top cpu 2} ${top mem 2}]

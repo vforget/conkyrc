@@ -3,7 +3,7 @@ background no
 border_width 1
 cpu_avg_samples 5
 default_color 333333
-default_outline_color white
+default_outline_color 888888
 draw_borders yes
 draw_graph_borders no
 draw_outline no
@@ -39,9 +39,9 @@ ${color 888888} ${nodename_short} * ${time %a %b %d, %Y} * \
 Cpu ${cpubar cpu1 12,30} ${cpubar cpu2 12,30} ${cpubar cpu3 12,30} ${cpubar cpu4 12,30} * \
 Mem ${membar 12,30} ${memperc}% * \
 Disk R${diskiograph_read /dev/sda 12,30 00FF00 FF0000 0 -t} \
-W${diskiograph_write /dev/sda 12,30 00FF00 FF0000 0 -t} * \
+W${diskiograph_write /dev/sda 12,30 00FF00 FF0000 0 -t -l} * \
 Swap ${swapbar 12,30} ${swapperc}% * \
 Net D${downspeedgraph p37p1 12,30 00FF00 FF0000 0 -t} U${upspeedgraph p37p1 12,30 00FF00 FF0000 0 -t} * \
-Load (${running_processes}) ${loadgraph 12,30 00FF00 FF0000 0 -t} * \
+Load (${running_processes}) ${loadgraph 12,30 00FF00 FF0000 0 -t -l} * \
 Top [${top name 1} ${top cpu 1} ${top mem 1}] \
 [${top name 2} ${top cpu 2} ${top mem 2}]
